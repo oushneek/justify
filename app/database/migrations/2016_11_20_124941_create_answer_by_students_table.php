@@ -17,7 +17,7 @@ class CreateAnswerByStudentsTable extends Migration {
 			$table->increments('id')->unsigned();
         	$table->integer('student_id')->unsigned();
         	$table->integer('exam_question_id')->unsigned();
-        	$table->integer('option_id')->nullable();
+        	$table->integer('option_id')->unsigned();
         	$table->integer('time_taken');
         	$table->integer('submition_status');
         	$table->boolean('is_skipped');
