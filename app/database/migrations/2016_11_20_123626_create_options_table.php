@@ -12,7 +12,17 @@ class CreateOptionsTable extends Migration {
 	 */
 	public function up()
 	{
-		//
+		//Creates the options table
+		Schema::create('options', function ($table) {
+			$table->increments('id')->unsigned();
+        	$table->integer('question_id')->unsigned();
+        	$table->string('option_description');
+        	$table->timestamps();
+            $table->foreign('question_id')->references('id')->on('questions')
+                ->onUpdate('cascade')->onDelete('cascade');
+            
+        });
+
 	}
 
 	/**
@@ -23,6 +33,10 @@ class CreateOptionsTable extends Migration {
 	public function down()
 	{
 		//
-	}
+		Schema::table('options', function (Blueprint $table) {
+            $table->dropForeign('options_question_id_foreign');
+        });
+
+		Schema::drop('options');	}
 
 }

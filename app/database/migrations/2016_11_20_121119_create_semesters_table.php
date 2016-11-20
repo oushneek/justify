@@ -12,7 +12,7 @@ class CreateSemestersTable extends Migration {
 	 */
 	public function up()
 	{
-		///Creates the semesters table
+		//Creates the semesters table
 		Schema::create('semesters', function ($table) {
 			$table->increments('id')->unsigned();
         	$table->string('semester_name');
