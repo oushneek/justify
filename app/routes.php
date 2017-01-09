@@ -19,8 +19,8 @@ Route::get('/', function()
 
 //courses
 Route::get('courses', array('as' => 'course.index', 'uses' => 'CourseController@index'));
-Route::get('courses/{id}', array('as' => 'course.show', 'uses' => 'CourseController@show'));
 Route::get('courses/create', array('as' => 'course.create', 'uses' => 'CourseController@create'));
+Route::get('courses/{id}', array('as' => 'course.show', 'uses' => 'CourseController@show'));
 Route::post('courses/store', array('as' => 'course.store', 'uses' => 'CourseController@store'));
 Route::get('courses/{id}/edit', array('as' => 'course.edit', 'uses' => 'CourseController@edit'));
 Route::put('courses/{id}', array('as' => 'course.update', 'uses' => 'CourseController@update'));
