@@ -7,7 +7,7 @@
 
 
   		@include('includes.alert')
-  		{{ Form::model($semester,['route' => ['semesters.update',$course->id], 'method' => 'put', 'class' => 'form-horizontal','files' => false]) }}
+  		{{ Form::model($semester,['route' => ['semester.update',$semester->id], 'method' => 'put', 'class' => 'form-horizontal','files' => false]) }}
 				  <fieldset>
 					
 					<legend class="col-md-8 col-md-offset-2">Edit Semester</legend>
