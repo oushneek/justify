@@ -7,11 +7,10 @@
 
 
   		@include('includes.alert')
-  		{{ Form::open(['route' => 'course.store', 'method' => 'post', 'class' => 'form-horizontal','files' => false]) }}
+  		{{ Form::model($course,['route' => ['course.update',$course->id], 'method' => 'put', 'class' => 'form-horizontal','files' => false]) }}
 				  <fieldset>
 					
-					<legend class="col-md-8 col-md-offset-2">Add New Course</legend>
-					
+					<legend class="col-md-8 col-md-offset-2">Edit Course</legend>
 					
 					
 					<div class="form-group">
@@ -31,7 +30,7 @@
 					
 					<div class="form-group">
 					  <div class="col-lg-7 col-lg-offset-5">
-					  	{{Form::submit('Save',array('class'=>'btn btn-info'))}}
+					  	{{Form::submit('Update',array('class'=>'btn btn-info'))}}
 					  </div>
 					</div>
 				  </fieldset>
